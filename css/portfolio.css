@@ -1,0 +1,549 @@
+@charset "utf-8";
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    width: 100%;
+    height: 100vh;
+}
+
+body {
+    background: #fff;
+    color: #000;
+    transition: all 0.5s;
+    cursor: url(../img/cursor.png) 8 8, auto;
+}
+
+main {
+    margin: 0 auto;
+}
+
+
+/* 공통영역 */
+
+a,
+button {
+    cursor: url(../img/cursor.png) 8 8, auto !important;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+.innerBox {
+    width: 100%;
+    height: 100vh;
+    padding: 100px 150px;
+}
+
+.mainTitle {
+    font-size: 100px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #16A1B1;
+    margin-bottom: 10px;
+}
+
+.text {
+    line-height: 26px;
+    word-break: keep-all;
+}
+
+.btnArea {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.btnArea button {
+    width: 200px;
+    height: 45px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Pretendard';
+    text-align: center;
+    line-height: 45px;
+}
+
+.btnArea .liveDemo {
+    background: #fff;
+    color: #000;
+}
+
+.btnArea .codeReview {
+    background: #005D6B;
+    color: #fff;
+}
+
+/* header */
+header {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    padding: 0 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    transition: all 0.5s ease;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    transition: all 0.5s;
+}
+
+header nav {
+    font-size: 20px;
+    font-weight: 500;
+    width: 40%;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+header nav ul li a:hover {
+    color: #16A1B1;
+    transition: all 0.2s;
+}
+
+.theme-toggle {
+    width: fit-content;
+    height: fit-content;
+}
+
+.theme-toggle img {
+    width: 24px;
+    height: 24px;
+}
+
+/* fixed header */
+header.on {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+header.on h1 {
+    color: #16A1B1;
+    transition: all 0.5s;
+}
+
+/* mainIntro */
+#mainIntro {
+    height: 100vh;
+    position: relative;
+    background: url(../img/bg01.png) no-repeat center/cover;
+    transition: all 0.5s;
+}
+
+#mainIntro .mainText {
+    position: absolute;
+    left: 150px;
+    bottom: 100px;
+}
+
+#mainIntro .mainText .subTitle {
+    font-size: 40px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+/* about */
+#about {
+    width: 100%;
+}
+
+/* banner */
+#about .banner {
+    padding: 100px;
+    text-align: center;
+    background: #eee;
+}
+
+#about .banner .textArea {
+    opacity: 0;
+    transform: translateY(-20%);
+    transition: all 1s ease-out;
+}
+
+#about .banner .textArea.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#about .banner .mainTitle,
+#about .banner .formula {
+    margin-bottom: 50px;
+}
+
+#about .banner .formula ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+#about .banner .formula ul li {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 35px;
+}
+
+#about .banner .textArea .mainTitle span {
+    color: #16A1B1;
+}
+
+#about .banner .formula ul li span {
+    font-size: 32px;
+    color: #16A1B1;
+}
+
+/* aboutMe */
+#about .aboutMe {
+    width: 100%;
+    padding: 100px 150px;
+}
+
+#about .aboutMe .introduce {
+    padding: 40px 25px;
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 50px;
+}
+
+#about .aboutMe .identify {
+    margin-bottom: 50px;
+}
+
+#about .aboutMe .identify h2 {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+#about .aboutMe .identify ul {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+#about .aboutMe .identify ul li {
+    text-align: center;
+    position: relative;
+    width: 180px;
+    height: 160px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#about .aboutMe .identify ul li::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(22, 161, 177, 0.5));
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+#about .aboutMe .identify ul li p {
+    font-size: 17px;
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+}
+
+#about .aboutMe .identify ul li span {
+    position: absolute;
+    z-index: 0;
+    top: 85px;
+    font-size: 40px;
+    font-weight: 700;
+    word-break: keep-all;
+    color: #ddd;
+}
+
+#about .aboutMe .skills h2 {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+#about .aboutMe .skills ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 90px;
+}
+
+#about .aboutMe .skills ul li img {
+    width: 50px;
+    height: 50px;
+}
+
+/* works */
+#works {
+    width: 100%;
+    height: 100%;
+    background: url(../img/bg05.png) no-repeat left/cover;
+}
+
+#works .workCard {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+#works .cardArea {
+    position: relative;
+    width: calc(100%/2);
+    height: clamp(250px, 60vh, 550px);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #eee;
+    border-radius: 20px;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.2);
+    color: #000;
+}
+
+#works .cardArea h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+#works .cardArea span {
+    display: flex;
+    gap: 7px;
+    font-weight: 300;
+    color: #005D6B;
+    word-break: keep-all;
+}
+
+#works .cardArea .hover-image {
+    position: fixed;
+    /* 마우스 기준 위치 고정 */
+    pointer-events: none;
+    /* 이미지 위에서도 마우스 이벤트 통과 */
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 9999;
+    background: #eee;
+    width: 400px;
+    height: 250px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#works .workTextArea {
+    width: calc(100%/2)
+}
+
+#works .workTextArea ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#works .workTextArea ul li {
+    width: 100%;
+    line-height: 24px;
+}
+
+/* teamProject */
+#teamProject {
+    background: #eee;
+}
+
+#teamProject .innerBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#teamProject .btnArea {
+    margin-bottom: 25px;
+}
+
+#teamProject .textBox {
+    padding: 20px 70px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    line-height: 1.4;
+}
+
+#teamProject .textBox li:first-child {
+    margin-bottom: 12px;
+}
+
+/* designWork */
+#designWork {
+    width: 100%;
+    height: 100vh;
+}
+
+#designWork h2 {
+    margin: 100px 0 70px 150px;
+}
+
+#designWork .designUiCard {
+    margin-bottom: 100px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+#designWork .designUiCard ul {
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+}
+
+#designWork .designUiCard ul li {
+    flex: 0 0 auto;
+    margin: 30px;
+}
+
+#designWork .designUiCard ul li figure {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    padding: 25px;
+    background: #eee;
+    border-radius: 20px;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.2);
+}
+
+#designWork .designUiCard ul li h3 {
+    font-size: 24px;
+    font-weight: 700;
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    color: #000;
+}
+
+/* contact */
+#contact {
+    position: relative;
+    background: url(../img/bg04.png) no-repeat left/cover;
+}
+
+#contact .textArea {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#contact .information .subTitle {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+#contact .information .subTitle::after {
+    content: '';
+    width: clamp(200px, 55vw, 1000px);
+    height: 1px;
+    background: #ddd;
+    display: block;
+    margin: 10px 0 20px;
+}
+
+#contact .information dl {
+    display: flex;
+    gap: 30px;
+}
+
+#contact .lastText {
+    margin-top: 20px;
+    margin-left: 50px;
+    font-size: 20px;
+    font-weight: 300;
+    min-width: 300px;
+    word-break: keep-all;
+}
+
+/* nav_moblie */
+.mobile {
+    display: none;
+}
+
+
+/* 다크모드 */
+body.dark {
+    background: #000;
+    color: #fff;
+    transition: all 0.5s;
+    cursor: url(../img/cursor_d.png) 8 8, auto;
+}
+
+body.dark a,
+body.dark button {
+    cursor: url(../img/cursor_d.png) 8 8, auto !important;
+}
+
+body.dark header.on {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+body.dark #mainIntro {
+    background: url(../img/bg01.jpg) no-repeat center/cover;
+    transition: all 0.5s;
+}
+
+body.dark #about .banner {
+    background: #333;
+    transition: all 0.5s;
+}
+
+body.dark #about .aboutMe .identify ul li span {
+    color: #333;
+}
+
+body.dark #works {
+    background: url(../img/bg05.jpg) no-repeat left/cover;
+    transition: all 0.5s;
+}
+
+body.dark #works .cardArea {
+    box-shadow: 0 7px 20px rgba(255, 255, 255, 0.6);
+}
+
+body.dark #teamProject {
+    background: #333;
+}
+
+body.dark #teamProject .textBox {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+body.dark #designWork .designUiCard ul li figure {
+    box-shadow: 0 7px 20px rgba(255, 255, 255, 0.6);
+}
+
+body.dark #contact {
+    background: url(../img/bg04.jpg) no-repeat top left/cover;
+}
